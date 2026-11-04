@@ -50,9 +50,22 @@ Se muestra un menú numérico. Ingresar el número de la opción deseada y segui
 ## Estructura del repositorio
 
 ```
-├── main.py        # Código del sistema
-├── README.md      # Este archivo
-└── docs/          # Diagnóstico, checklist de code review y evidencias
+├── main.py              # Punto de entrada: arma el servicio y lanza el menú
+├── modelos.py           # Enums y clases: Estado, Prioridad, TipoSolicitud, Estudiante, Responsable, Solicitud
+├── excepciones.py       # Errores propios del sistema
+├── repositorio.py       # Interfaz y almacenamiento en memoria
+├── servicio.py          # Reglas de negocio
+├── consola.py           # Menú, entrada y salida por consola
+├── test_servicio.py     # Pruebas automatizadas
+├── .gitignore
+├── README.md
+└── docs/                # Diagnóstico, refactorings, pruebas, code review y evidencias
+```
+
+## Pruebas
+
+```bash
+python -m unittest test_servicio.py -v
 ```
 
 ## Tags del repositorio
