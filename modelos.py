@@ -100,6 +100,15 @@ class Solicitud:
             raise DatoInvalidoError("No se puede cambiar el estado de una solicitud resuelta o rechazada")
         self.estado = Estado.desde_texto(texto_estado)
 
+    def asignar_responsable(self, responsable):
+        """Actualiza el responsable dentro de la entidad para preservar el encapsulamiento.
+
+        La existencia del responsable se valida en el servicio, porque allí se encuentra
+        el catálogo disponible. Una vez validado, la Solicitud controla la modificación
+        de su propio estado interno.
+        """
+        self.responsable = responsable
+
     def _campos_base(self):
         return [str(self.id), self.estudiante.nombre, self.tipo.nombre,
                 self.prioridad.value, self.estado.value]

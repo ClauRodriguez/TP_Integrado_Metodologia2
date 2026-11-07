@@ -38,7 +38,10 @@ class ServicioSolicitudes:
         responsable = self._responsables.get(id_responsable)
         if responsable is None:
             raise NoEncontradoError("Responsable inválido")
-        solicitud.responsable = responsable
+
+        # El servicio valida la referencia; la entidad Solicitud aplica el cambio
+        # para evitar modificar su estado interno directamente desde otra capa.
+        solicitud.asignar_responsable(responsable)
 
     def buscar(self, campo, valor):
         criterio = CRITERIOS.get(campo)

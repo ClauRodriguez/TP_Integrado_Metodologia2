@@ -35,8 +35,8 @@ Este repositorio es la base de un trabajo de evolución de calidad de software. 
 2. Clonar el repositorio:
 
 ```bash
-git clone [URL-del-repositorio]
-cd [nombre-del-repositorio]
+git clone https://github.com/ClauRodriguez/TP_Integrado_Metodologia2.git
+cd TP_Integrado_Metodologia2
 ```
 
 ## Uso
@@ -56,7 +56,8 @@ Se muestra un menú numérico. Ingresar el número de la opción deseada y segui
 ├── repositorio.py       # Interfaz y almacenamiento en memoria
 ├── servicio.py          # Reglas de negocio
 ├── consola.py           # Menú, entrada y salida por consola
-├── test_servicio.py     # Pruebas automatizadas
+├── test_servicio.py     # Pruebas automatizadas de la lógica de negocio
+├── test_consola.py      # Pruebas básicas de integración de la interfaz de consola
 ├── .gitignore
 ├── README.md
 └── docs/                # Diagnóstico, refactorings, pruebas, code review y evidencias
@@ -64,9 +65,13 @@ Se muestra un menú numérico. Ingresar el número de la opción deseada y segui
 
 ## Pruebas
 
+La suite automatizada combina pruebas de la lógica de negocio y verificaciones básicas de integración de la consola. Se ejecuta completa con:
+
 ```bash
-python -m unittest test_servicio.py -v
+python -m unittest discover -v
 ```
+
+Actualmente se ejecutan 16 pruebas automatizadas. Las pruebas de consola se agregaron para verificar entradas numéricas inválidas y el flujo mínimo de registro sin depender de interacción manual.
 
 ## Tags del repositorio
 
