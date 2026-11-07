@@ -35,8 +35,8 @@ Este repositorio es la base de un trabajo de evolución de calidad de software. 
 2. Clonar el repositorio:
 
 ```bash
-git clone [URL-del-repositorio]
-cd [nombre-del-repositorio]
+git clone https://github.com/ClauRodriguez/TP_Integrado_Metodologia2.git
+cd TP_Integrado_Metodologia2
 ```
 
 ## Uso
